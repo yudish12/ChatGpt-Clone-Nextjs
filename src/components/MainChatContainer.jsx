@@ -127,6 +127,8 @@ const MainChatContainer = ({selectedChat,setIsSideBarOpen,setSelectedChat}) => {
     if(selectedChat) {
       setLoading(true)
       getPrompts(selectedChat)
+    }else{
+      setChatHistory(null)
     }
     },[selectedChat])
 

@@ -18,8 +18,9 @@ export async function GET(request) {
     
     let { data: Chats, error:e } = await supabase
   .from('Chats')
-  .select('*,Prompts(prompt)')
+  .select('*,Prompts(prompt,roles)')
   .eq('userid',data.user.id)
+  .eq('Prompts.roles',"USER")
   .order('created_at',{ascending:false});
   
 

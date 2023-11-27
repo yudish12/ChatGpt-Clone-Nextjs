@@ -16,14 +16,15 @@ export function AsideBar({ setSelectedChat,selectedChat,isSidebarOpen,setIsSideB
       try {
         const resp = await fetch("/api/chat");
         const res = await resp.json();
-        console.log(res)
+        console.log(res,19)
         const chatsRefactored = res?.data?.map((e) => {
+          
           const t = moment(e.created_at).fromNow();
           console.log(t);
           e.created_at = t;
           return e;
         });
-        console.log(chatsRefactored);
+        console.log(chatsRefactored,26);
         setChats(res.data);
         setLoading(false)
       } catch (error) {
@@ -96,7 +97,7 @@ export function AsideBar({ setSelectedChat,selectedChat,isSidebarOpen,setIsSideB
                 <div
                   className="flex items-center justify-between "
                 >
-                  <span className=" cursor-pointer" onClick={() => setSelectedChat(e.id)} >{e?.Prompts[0]?.prompt}</span>
+                  <span className="truncate cursor-pointer" onClick={() => setSelectedChat(e.id)} >{e?.Prompts[0]?.prompt}</span>
                   <DeleteIcon 
                     onClick={() => deleteChat(e.id)}
                     style={{ width: "25px",color:"red" }}
@@ -139,7 +140,7 @@ export function AsideBar({ setSelectedChat,selectedChat,isSidebarOpen,setIsSideB
                 <div
                   className="flex   items-center justify-between "
                 >
-                  <span className="cursor-pointer text-md font-light md:text-lg md:font-semibold" onClick={() => setSelectedChat(e.id)} >{e?.Prompts[0]?.prompt}</span>
+                  <span className="cursor-pointer truncate text-md font-light md:text-lg md:font-semibold" onClick={() => setSelectedChat(e.id)} >{e?.Prompts[0]?.prompt}</span>
                   <DeleteIcon 
                     onClick={() => deleteChat(e.id)}
                     style={{ width: "25px",color:"red" }}
