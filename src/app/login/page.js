@@ -4,7 +4,6 @@ import { Input } from "../../components/ui/input";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import React, { useState } from "react";
-import connectSupabase from "../../lib/supabase";
 import { toast } from "react-toastify";
 
 

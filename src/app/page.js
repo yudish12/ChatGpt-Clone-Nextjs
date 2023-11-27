@@ -4,8 +4,9 @@ import { redirect } from 'next/navigation'
 import MainScreen from './../components/MainScreen';
 
 export default async function Home() {
+  const cookieStore = cookies()
+  const supabase = createServerComponentClient({ cookies: () => cookieStore })
   
-  const supabase = createServerComponentClient({cookies});
   const {data} = await supabase.auth.getSession()
   
   if(!data.session){
