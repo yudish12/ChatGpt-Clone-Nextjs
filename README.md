@@ -1,8 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Getting Started
 
-## Getting Started
+First, Clone the git repository in your vscode<br/>
 
-First, run the development server:
+Second, Run command in the folder which have package.json file(make sure you have installed nodejs and npm)
+
+```
+npm install
+```
+
+Now, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +22,23 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Descriptoin and Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I have used the following technologies and api's for this project
+1)Nextjs fullstack framework based on reactjs<br/>
+2)supabase an postgres database with auth service and etc<br/>
+3)Shadcn ui library and tailwind CSS <br/>
+4)Cohere api for gpt response api url -> https://api.cohere.ai/v1/chat<br/>
 
-## Learn More
+In this project I have tried to clone the functionality of ChatGPT as close as I can get with the free tier api<br/>
 
-To learn more about Next.js, take a look at the following resources:
+I have used the supabase auth and database to store chats prompts and user's session etc so that I can create a <br/>
+protected ai chatting or prompting system where the ai will response to your queries
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
+1)Authentication system for loggin in and signing up<br/>
+2)create and delete a chat with the timestamp of it's creation<br/>
+3)Ask Prompts to ai regarding anything and it will reply based on previous history
+4)Light mode and dark mode available for AI chat screen
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Video

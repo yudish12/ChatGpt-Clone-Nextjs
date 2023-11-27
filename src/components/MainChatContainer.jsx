@@ -142,7 +142,7 @@ const MainChatContainer = ({selectedChat,setIsSideBarOpen,setSelectedChat}) => {
     >
       <div className="flex items-center justify-between gap-4" >
         <h3 className="scroll-m-20 text-xl flex items-center gap-6 font-semibold tracking-tight">
-      <SidebarOpen onClick={()=>setIsSideBarOpen(true)} className="md:hidden" />
+      <SidebarOpen onClick={()=>setIsSideBarOpen(true)} className="md:hidden hover:scale-125 transition-all ease-in-out cursor-pointer" />
           ChatGPT-3.5
         </h3>
         <div className="btns flex items-center gap-4">

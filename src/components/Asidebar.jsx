@@ -81,9 +81,9 @@ export function AsideBar({ setSelectedChat,selectedChat,isSidebarOpen,setIsSideB
             Chats
           </h3>
         </div>
-        <div className="cursor-pointer hover:border-2 hover:border-white rounded-md transition-all ease-in p-1 flex justify-center gap-3 items-center">
-          <FilePlus2 style={{ width: "20px" }} />
-          <SidebarClose onClick={()=>setIsSideBarOpen(false)} />
+        <div className="cursor-pointer  p-1 flex justify-center gap-3 items-center">
+          <FilePlus2 className="hover:scale-125 transition-all ease-in-out" onClick={()=>setSelectedChat(null)} style={{ width: "20px" }} />
+          <SidebarClose className="hover:scale-125 transition-all ease-in-out" onClick={()=>setIsSideBarOpen(false)} />
         </div>
       </div>
       {loading ? (
@@ -125,8 +125,8 @@ export function AsideBar({ setSelectedChat,selectedChat,isSidebarOpen,setIsSideB
             Chats
           </h3>
         </div>
-        <div className="cursor-pointer hover:border-2 hover:border-white rounded-md transition-all ease-in p-1 flex justify-center items-center">
-          <FilePlus2 style={{ width: "20px" }} />
+        <div className="cursor-pointer p-1 flex justify-center items-center">
+          <FilePlus2 className="hover:scale-125 transition-all ease-in-out" onClick={()=>setSelectedChat(null)} style={{ width: "20px" }} />
         </div>
       </div>
       {loading ? (
@@ -139,7 +139,7 @@ export function AsideBar({ setSelectedChat,selectedChat,isSidebarOpen,setIsSideB
                 <div
                   className="flex   items-center justify-between "
                 >
-                  <span className="cursor-pointer" onClick={() => setSelectedChat(e.id)} >{e?.Prompts[0]?.prompt}</span>
+                  <span className="cursor-pointer text-md font-light md:text-lg md:font-semibold" onClick={() => setSelectedChat(e.id)} >{e?.Prompts[0]?.prompt}</span>
                   <DeleteIcon 
                     onClick={() => deleteChat(e.id)}
                     style={{ width: "25px",color:"red" }}
