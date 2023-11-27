@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server'
 
 export async function POST(request) {
   const requestUrl = new URL(request.url)
-  
+  const cookieStore = cookies()
   const supabase = createServerComponentClient({ cookies: () => cookieStore })
   await supabase.auth.signOut()
 
