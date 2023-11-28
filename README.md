@@ -49,3 +49,6 @@ protected ai chatting or prompting system where the ai will response to your que
 4)Light mode and dark mode available for AI chat screen
 
 ## Video
+
+https://github.com/yudish12/ChatGpt-Clone-Nextjs/assets/82305974/493e0560-af11-42f6-b486-4c025c323c44
+
