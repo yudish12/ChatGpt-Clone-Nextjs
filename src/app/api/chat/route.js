@@ -1,11 +1,11 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createRouteHandlerClient, createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
   try {
     const cookieStore = cookies();
-    const supabase = createServerComponentClient({ cookies: () => cookieStore });
+    const supabase = createRouteHandlerClient({ cookies: () => cookieStore });
 
     const { data, error } = await supabase.auth.getUser();
 
@@ -43,7 +43,7 @@ export async function DELETE(request){
         console.log(id)
 
         const cookieStore = cookies();
-        const supabase = createServerComponentClient({ cookies: () => cookieStore });
+        const supabase = createRouteHandlerClient({ cookies: () => cookieStore });
         const {data:userData,errpr:e} = await supabase.auth.getUser();
 
         const {data,error} = await supabase.from('Chats').delete().eq('id', id).eq('userid',userData.user.id);

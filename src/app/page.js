@@ -5,11 +5,13 @@ import MainScreen from './../components/MainScreen';
 
 export default async function Home() {
   const cookieStore = cookies()
+  console.log(cookieStore.getAll(),8)
   const supabase = createServerComponentClient({ cookies: () => cookieStore })
   
   const {data} = await supabase.auth.getSession()
   
   if(!data.session){
+    console.log("as")
     redirect('/login')
   }
 
